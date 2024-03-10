@@ -1,0 +1,11 @@
+,Query Path,SAT/UNSAT,Depths,algaroba2,z3 Time,CVC5 Time,Princess Time
+0,test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v1/v1l20053.cvc.smt2,"{'algaroba2': 'sat', 'z3': 's', 'cvc5': 's', 'princess': 'T'}",,0.5212888717651367,0.34078478813171387,0.09119510650634766,1201
+1,test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v1/v1l70091.cvc.smt2,"{'algaroba2': 'unsat', 'z3': 'u', 'cvc5': 'u', 'princess': 'T'}",,0.4606359004974365,0.347851037979126,0.10331606864929199,1201
+2,test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v1/v1l70090.cvc.smt2,"{'algaroba2': 'unsat', 'z3': 'u', 'cvc5': 'u', 'princess': 'T'}",,0.4711298942565918,0.3471388816833496,0.10387086868286133,1201
+3,test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v1/v1l20052.cvc.smt2,"{'algaroba2': 'sat', 'z3': 's', 'cvc5': 's', 'princess': 'T'}",,0.5307490825653076,0.3406977653503418,0.09158706665039062,1201
+4,test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v1/v1l80029.cvc.smt2,"{'algaroba2': 'unsat', 'z3': 'u', 'cvc5': 'u', 'princess': 'T'}",,0.41954684257507324,0.3633148670196533,0.0915372371673584,1201
+5,test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v1/v1l80028.cvc.smt2,"{'algaroba2': 'sat', 'z3': 's', 'cvc5': 's', 'princess': 'T'}",,0.4344630241394043,0.34705495834350586,0.0847480297088623,1201
+6,test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v1/v1l30032.cvc.smt2,"{'algaroba2': 'unsat', 'z3': 'u', 'cvc5': 'u', 'princess': 'T'}",,0.4973580837249756,0.34653377532958984,0.10381412506103516,1201
+7,test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v1/v1l30033.cvc.smt2,"{'algaroba2': 'unsat', 'z3': 'u', 'cvc5': 'u', 'princess': 'T'}",,0.4969501495361328,0.3483858108520508,0.10237526893615723,1201
+8,test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v1/v1l70002.cvc.smt2,"{'algaroba2': 'unsat', 'z3': 'u', 'cvc5': 'u', 'princess': 'T'}",,0.028451204299926758,0.0458528995513916,0.02364492416381836,1201
+9,test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v1/v1l50052.cvc.smt2,"{'algaroba2': 'sat', 'z3': 's', 'cvc5': 's', 'princess': 'T'}",,0.03322291374206543,0.04840493202209473,0.02340102195739746,1201

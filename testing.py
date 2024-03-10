@@ -18,11 +18,11 @@ run_pre_solvers= True
 princess_path = "princess"
 cvc5_path = "cvc5"
 z3_path = "z3"
-algaroba_flags = {"algaroba2": []}
+algaroba_flags = {"algaroba3": []}
 
 
 # A function that runs the Ocaml that does the reductions for us
-def run_ocaml_on_smt2(smt2_file_path, ocaml_executable_path = "_build/default/bin/algaroba2.exe", flags = []):
+def run_ocaml_on_smt2(smt2_file_path, ocaml_executable_path = "_build/default/bin/algaroba3.exe", flags = []):
     cmd = [ocaml_executable_path] + flags + [smt2_file_path]
     try:
         result = subprocess.run(cmd, capture_output=True, text=True, timeout = reduction_timeout)
@@ -53,17 +53,17 @@ if test_case == "Barrett":
     typedfolder5 = "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v5/"
     typedfolder10 = "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v10/"
 
-    folders = {"test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v1/": glob.glob(folder1 + "*.smt2"),
-            "test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v2/": glob.glob(folder2 + "*.smt2"),
-            "test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v3/": glob.glob(folder3 + "*.smt2"),
-            "test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v5/": glob.glob(folder5 + "*.smt2"),
-            "test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v10/": glob.glob(folder10 + "*.smt2"),
-            "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v1/": glob.glob(typedfolder1 + "*.smt2"),
-            "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v2/": glob.glob(typedfolder2 + "*.smt2"),
-            "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v3/": glob.glob(typedfolder3 + "*.smt2"),
-            "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v5/": glob.glob(typedfolder5 + "*.smt2"),
-            "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v10/": glob.glob(typedfolder10 + "*.smt2")
-            }        
+    folders = {"test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v1/": glob.glob(folder1 + "*.smt2")[:50]}#,
+            # "test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v2/": glob.glob(folder2 + "*.smt2"),
+            # "test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v3/": glob.glob(folder3 + "*.smt2"),
+            # "test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v5/": glob.glob(folder5 + "*.smt2"),
+            # "test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v10/": glob.glob(folder10 + "*.smt2"),
+            # "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v1/": glob.glob(typedfolder1 + "*.smt2"),
+            # "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v2/": glob.glob(typedfolder2 + "*.smt2"),
+            # "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v3/": glob.glob(typedfolder3 + "*.smt2"),
+            # "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v5/": glob.glob(typedfolder5 + "*.smt2"),
+            # "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v10/": glob.glob(typedfolder10 + "*.smt2")
+            # }        
 elif test_case == "Bouvier":
     folders = {"test/QF_DT2/20210312-Bouvier/": glob.glob("test/QF_DT2/20210312-Bouvier/*smt2")}
 elif test_case == "BouvierUF":
@@ -223,7 +223,7 @@ def make_graph(algaroba,z3, cvc5, princess):
     # Add legend
     plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 
-    plt.savefig("test/graphs/" + output_name + datetime.now().strftime("%Y-%m-%d%H:%M:%S") + '.png', dpi=300, bbox_inches = "tight")
+    # plt.savefig("test/graphs/" + output_name + datetime.now().strftime("%Y-%m-%d%H:%M:%S") + '.png', dpi=300, bbox_inches = "tight")
 
 
     # Show the plot
@@ -322,7 +322,7 @@ if __name__ == '__main__':
     
     print("DOESNT MATCH: ", incorrects)
 
-    make_graph(algaroba_times, z3 ,cvc5, princess)
+    # make_graph(algaroba_times, z3 ,cvc5, princess)
 
     if run_pre_solvers: 
         new_dict = {"Query Path": filenames,  "SAT/UNSAT": sat_unsat, "Depths": depths}

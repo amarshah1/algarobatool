@@ -1,0 +1,10 @@
+package "algaroba_lib" (
+  directory = "algaroba_lib"
+  version = "0.1"
+  description = ""
+  requires = "containers core landmarks ocamlgraph smtlib-utils z3"
+  archive(byte) = "algaroba_lib.cma"
+  archive(native) = "algaroba_lib.cmxa"
+  plugin(byte) = "algaroba_lib.cma"
+  plugin(native) = "algaroba_lib.cmxs"
+)

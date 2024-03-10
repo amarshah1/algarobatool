@@ -1,0 +1,68 @@
+lib: [
+  "_build/install/default/lib/algaroba/META"
+  "_build/install/default/lib/algaroba/algaroba_lib/Bound.ml" {"algaroba_lib/Bound.ml"}
+  "_build/install/default/lib/algaroba/algaroba_lib/Context.ml" {"algaroba_lib/Context.ml"}
+  "_build/install/default/lib/algaroba/algaroba_lib/R1inline.ml" {"algaroba_lib/R1inline.ml"}
+  "_build/install/default/lib/algaroba/algaroba_lib/R2rewrite.ml" {"algaroba_lib/R2rewrite.ml"}
+  "_build/install/default/lib/algaroba/algaroba_lib/R3flatten.ml" {"algaroba_lib/R3flatten.ml"}
+  "_build/install/default/lib/algaroba/algaroba_lib/R4normalize.ml" {"algaroba_lib/R4normalize.ml"}
+  "_build/install/default/lib/algaroba/algaroba_lib/R5reduce_rules.ml" {"algaroba_lib/R5reduce_rules.ml"}
+  "_build/install/default/lib/algaroba/algaroba_lib/R6reduce_axioms.ml" {"algaroba_lib/R6reduce_axioms.ml"}
+  "_build/install/default/lib/algaroba/algaroba_lib/Reduction_functions.ml" {"algaroba_lib/Reduction_functions.ml"}
+  "_build/install/default/lib/algaroba/algaroba_lib/Z3_utils.ml" {"algaroba_lib/Z3_utils.ml"}
+  "_build/install/default/lib/algaroba/algaroba_lib/Z3model_utils.ml" {"algaroba_lib/Z3model_utils.ml"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib.a" {"algaroba_lib/algaroba_lib.a"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib.cma" {"algaroba_lib/algaroba_lib.cma"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib.cmi" {"algaroba_lib/algaroba_lib.cmi"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib.cmt" {"algaroba_lib/algaroba_lib.cmt"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib.cmx" {"algaroba_lib/algaroba_lib.cmx"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib.cmxa" {"algaroba_lib/algaroba_lib.cmxa"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib.ml" {"algaroba_lib/algaroba_lib.ml"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib__Bound.cmi" {"algaroba_lib/algaroba_lib__Bound.cmi"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib__Bound.cmt" {"algaroba_lib/algaroba_lib__Bound.cmt"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib__Bound.cmx" {"algaroba_lib/algaroba_lib__Bound.cmx"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib__Context.cmi" {"algaroba_lib/algaroba_lib__Context.cmi"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib__Context.cmt" {"algaroba_lib/algaroba_lib__Context.cmt"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib__Context.cmx" {"algaroba_lib/algaroba_lib__Context.cmx"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib__R1inline.cmi" {"algaroba_lib/algaroba_lib__R1inline.cmi"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib__R1inline.cmt" {"algaroba_lib/algaroba_lib__R1inline.cmt"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib__R1inline.cmx" {"algaroba_lib/algaroba_lib__R1inline.cmx"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib__R2rewrite.cmi" {"algaroba_lib/algaroba_lib__R2rewrite.cmi"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib__R2rewrite.cmt" {"algaroba_lib/algaroba_lib__R2rewrite.cmt"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib__R2rewrite.cmx" {"algaroba_lib/algaroba_lib__R2rewrite.cmx"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib__R3flatten.cmi" {"algaroba_lib/algaroba_lib__R3flatten.cmi"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib__R3flatten.cmt" {"algaroba_lib/algaroba_lib__R3flatten.cmt"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib__R3flatten.cmx" {"algaroba_lib/algaroba_lib__R3flatten.cmx"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib__R4normalize.cmi" {"algaroba_lib/algaroba_lib__R4normalize.cmi"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib__R4normalize.cmt" {"algaroba_lib/algaroba_lib__R4normalize.cmt"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib__R4normalize.cmx" {"algaroba_lib/algaroba_lib__R4normalize.cmx"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib__R5reduce_rules.cmi" {"algaroba_lib/algaroba_lib__R5reduce_rules.cmi"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib__R5reduce_rules.cmt" {"algaroba_lib/algaroba_lib__R5reduce_rules.cmt"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib__R5reduce_rules.cmx" {"algaroba_lib/algaroba_lib__R5reduce_rules.cmx"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib__R6reduce_axioms.cmi" {"algaroba_lib/algaroba_lib__R6reduce_axioms.cmi"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib__R6reduce_axioms.cmt" {"algaroba_lib/algaroba_lib__R6reduce_axioms.cmt"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib__R6reduce_axioms.cmx" {"algaroba_lib/algaroba_lib__R6reduce_axioms.cmx"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib__Reduction_functions.cmi" {"algaroba_lib/algaroba_lib__Reduction_functions.cmi"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib__Reduction_functions.cmt" {"algaroba_lib/algaroba_lib__Reduction_functions.cmt"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib__Reduction_functions.cmx" {"algaroba_lib/algaroba_lib__Reduction_functions.cmx"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib__Z3_utils.cmi" {"algaroba_lib/algaroba_lib__Z3_utils.cmi"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib__Z3_utils.cmt" {"algaroba_lib/algaroba_lib__Z3_utils.cmt"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib__Z3_utils.cmx" {"algaroba_lib/algaroba_lib__Z3_utils.cmx"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib__Z3model_utils.cmi" {"algaroba_lib/algaroba_lib__Z3model_utils.cmi"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib__Z3model_utils.cmt" {"algaroba_lib/algaroba_lib__Z3model_utils.cmt"}
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib__Z3model_utils.cmx" {"algaroba_lib/algaroba_lib__Z3model_utils.cmx"}
+  "_build/install/default/lib/algaroba/dune-package"
+  "_build/install/default/lib/algaroba/opam"
+]
+libexec: [
+  "_build/install/default/lib/algaroba/algaroba_lib/algaroba_lib.cmxs" {"algaroba_lib/algaroba_lib.cmxs"}
+]
+bin: [
+  "_build/install/default/bin/algaroba"
+  "_build/install/default/bin/algaroba2"
+  "_build/install/default/bin/algaroba3"
+  "_build/install/default/bin/reduce"
+]
+doc: [
+  "_build/install/default/doc/algaroba/README.md"
+]

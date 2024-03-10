@@ -1,0 +1,141 @@
+(lang dune 3.9)
+(name algaroba)
+(version 0.1)
+(sections (lib .) (libexec .) (bin ../../bin) (doc ../../doc/algaroba))
+(files
+ (lib
+  (META
+   algaroba_lib/Bound.ml
+   algaroba_lib/Context.ml
+   algaroba_lib/R1inline.ml
+   algaroba_lib/R2rewrite.ml
+   algaroba_lib/R3flatten.ml
+   algaroba_lib/R4normalize.ml
+   algaroba_lib/R5reduce_rules.ml
+   algaroba_lib/R6reduce_axioms.ml
+   algaroba_lib/Reduction_functions.ml
+   algaroba_lib/Z3_utils.ml
+   algaroba_lib/Z3model_utils.ml
+   algaroba_lib/algaroba_lib.a
+   algaroba_lib/algaroba_lib.cma
+   algaroba_lib/algaroba_lib.cmi
+   algaroba_lib/algaroba_lib.cmt
+   algaroba_lib/algaroba_lib.cmx
+   algaroba_lib/algaroba_lib.cmxa
+   algaroba_lib/algaroba_lib.ml
+   algaroba_lib/algaroba_lib__Bound.cmi
+   algaroba_lib/algaroba_lib__Bound.cmt
+   algaroba_lib/algaroba_lib__Bound.cmx
+   algaroba_lib/algaroba_lib__Context.cmi
+   algaroba_lib/algaroba_lib__Context.cmt
+   algaroba_lib/algaroba_lib__Context.cmx
+   algaroba_lib/algaroba_lib__R1inline.cmi
+   algaroba_lib/algaroba_lib__R1inline.cmt
+   algaroba_lib/algaroba_lib__R1inline.cmx
+   algaroba_lib/algaroba_lib__R2rewrite.cmi
+   algaroba_lib/algaroba_lib__R2rewrite.cmt
+   algaroba_lib/algaroba_lib__R2rewrite.cmx
+   algaroba_lib/algaroba_lib__R3flatten.cmi
+   algaroba_lib/algaroba_lib__R3flatten.cmt
+   algaroba_lib/algaroba_lib__R3flatten.cmx
+   algaroba_lib/algaroba_lib__R4normalize.cmi
+   algaroba_lib/algaroba_lib__R4normalize.cmt
+   algaroba_lib/algaroba_lib__R4normalize.cmx
+   algaroba_lib/algaroba_lib__R5reduce_rules.cmi
+   algaroba_lib/algaroba_lib__R5reduce_rules.cmt
+   algaroba_lib/algaroba_lib__R5reduce_rules.cmx
+   algaroba_lib/algaroba_lib__R6reduce_axioms.cmi
+   algaroba_lib/algaroba_lib__R6reduce_axioms.cmt
+   algaroba_lib/algaroba_lib__R6reduce_axioms.cmx
+   algaroba_lib/algaroba_lib__Reduction_functions.cmi
+   algaroba_lib/algaroba_lib__Reduction_functions.cmt
+   algaroba_lib/algaroba_lib__Reduction_functions.cmx
+   algaroba_lib/algaroba_lib__Z3_utils.cmi
+   algaroba_lib/algaroba_lib__Z3_utils.cmt
+   algaroba_lib/algaroba_lib__Z3_utils.cmx
+   algaroba_lib/algaroba_lib__Z3model_utils.cmi
+   algaroba_lib/algaroba_lib__Z3model_utils.cmt
+   algaroba_lib/algaroba_lib__Z3model_utils.cmx
+   dune-package
+   opam))
+ (libexec (algaroba_lib/algaroba_lib.cmxs))
+ (bin (algaroba algaroba2 algaroba3 reduce))
+ (doc (README.md)))
+(library
+ (name algaroba.algaroba_lib)
+ (kind normal)
+ (archives
+  (byte algaroba_lib/algaroba_lib.cma)
+  (native algaroba_lib/algaroba_lib.cmxa))
+ (plugins
+  (byte algaroba_lib/algaroba_lib.cma)
+  (native algaroba_lib/algaroba_lib.cmxs))
+ (native_archives algaroba_lib/algaroba_lib.a)
+ (requires smtlib-utils containers ocamlgraph z3 core landmarks)
+ (main_module_name Algaroba_lib)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name algaroba_lib)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Algaroba_lib)
+      (impl (path algaroba_lib/algaroba_lib.ml-gen))))
+    (name Algaroba_lib)
+    (modules
+     (module
+      (obj_name algaroba_lib__Bound)
+      (visibility public)
+      (source (path Bound) (impl (path algaroba_lib/Bound.ml))))
+     (module
+      (obj_name algaroba_lib__Context)
+      (visibility public)
+      (source (path Context) (impl (path algaroba_lib/Context.ml))))
+     (module
+      (obj_name algaroba_lib__R1inline)
+      (visibility public)
+      (source (path R1inline) (impl (path algaroba_lib/R1inline.ml))))
+     (module
+      (obj_name algaroba_lib__R2rewrite)
+      (visibility public)
+      (source (path R2rewrite) (impl (path algaroba_lib/R2rewrite.ml))))
+     (module
+      (obj_name algaroba_lib__R3flatten)
+      (visibility public)
+      (source (path R3flatten) (impl (path algaroba_lib/R3flatten.ml))))
+     (module
+      (obj_name algaroba_lib__R4normalize)
+      (visibility public)
+      (source (path R4normalize) (impl (path algaroba_lib/R4normalize.ml))))
+     (module
+      (obj_name algaroba_lib__R5reduce_rules)
+      (visibility public)
+      (source
+       (path R5reduce_rules)
+       (impl (path algaroba_lib/R5reduce_rules.ml))))
+     (module
+      (obj_name algaroba_lib__R6reduce_axioms)
+      (visibility public)
+      (source
+       (path R6reduce_axioms)
+       (impl (path algaroba_lib/R6reduce_axioms.ml))))
+     (module
+      (obj_name algaroba_lib__Reduction_functions)
+      (visibility public)
+      (source
+       (path Reduction_functions)
+       (impl (path algaroba_lib/Reduction_functions.ml))))
+     (module
+      (obj_name algaroba_lib__Z3_utils)
+      (visibility public)
+      (source (path Z3_utils) (impl (path algaroba_lib/Z3_utils.ml))))
+     (module
+      (obj_name algaroba_lib__Z3model_utils)
+      (visibility public)
+      (source
+       (path Z3model_utils)
+       (impl (path algaroba_lib/Z3model_utils.ml))))))
+   (wrapped true))))

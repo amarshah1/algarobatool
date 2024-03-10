@@ -1,0 +1,201 @@
+# dune build
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Workspace root: /Users/amarshah/Desktop/Fall2023/algarobatool
+# Auto-detected concurrency: 8
+$ /Users/amarshah/.opam/4.14.0/bin/ocamlc.opt -config > /var/folders/93/6bkqbz710ql9cdpnpx93hllm0000gq/T/dune_cb9750_output
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; for_host = None
+#  ; fdo_target_exe = None
+#  ; build_dir = In_build_dir "default"
+#  ; ocaml_bin = External "/Users/amarshah/.opam/4.14.0/bin"
+#  ; ocaml = Ok External "/Users/amarshah/.opam/4.14.0/bin/ocaml"
+#  ; ocamlc = External "/Users/amarshah/.opam/4.14.0/bin/ocamlc.opt"
+#  ; ocamlopt = Ok External "/Users/amarshah/.opam/4.14.0/bin/ocamlopt.opt"
+#  ; ocamldep = Ok External "/Users/amarshah/.opam/4.14.0/bin/ocamldep.opt"
+#  ; ocamlmklib = Ok External "/Users/amarshah/.opam/4.14.0/bin/ocamlmklib.opt"
+#  ; env =
+#      map
+#        { "DUNE_OCAML_HARDCODED" : "/Users/amarshah/.opam/4.14.0/lib"
+#        ; "DUNE_OCAML_STDLIB" : "/Users/amarshah/.opam/4.14.0/lib/ocaml"
+#        ; "DUNE_SOURCEROOT" : "/Users/amarshah/Desktop/Fall2023/algarobatool"
+#        ; "INSIDE_DUNE" :
+#            "/Users/amarshah/Desktop/Fall2023/algarobatool/_build/default"
+#        ; "MANPATH" :
+#            "/Users/amarshah/Desktop/Fall2023/algarobatool/_build/install/default/man"
+#        ; "OCAMLFIND_IGNORE_DUPS_IN" :
+#            "/Users/amarshah/Desktop/Fall2023/algarobatool/_build/install/default/lib"
+#        ; "OCAMLPATH" :
+#            "/Users/amarshah/Desktop/Fall2023/algarobatool/_build/install/default/lib"
+#        ; "OCAMLTOP_INCLUDE_PATH" :
+#            "/Users/amarshah/Desktop/Fall2023/algarobatool/_build/install/default/lib/toplevel"
+#        ; "OCAML_COLOR" : "always"
+#        ; "OPAMCOLOR" : "always"
+#        }
+#  ; findlib_paths = [ External "/Users/amarshah/.opam/4.14.0/lib" ]
+#  ; natdynlink_supported = true
+#  ; supports_shared_libraries = true
+#  ; ocaml_config =
+#      { version = "4.14.0"
+#      ; standard_library_default = "/Users/amarshah/.opam/4.14.0/lib/ocaml"
+#      ; standard_library = "/Users/amarshah/.opam/4.14.0/lib/ocaml"
+#      ; standard_runtime = "the_standard_runtime_variable_was_deleted"
+#      ; ccomp_type = "cc"
+#      ; c_compiler = "cc"
+#      ; ocamlc_cflags =
+#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-pthread" ]
+#      ; ocamlc_cppflags = [ "-D_FILE_OFFSET_BITS=64" ]
+#      ; ocamlopt_cflags =
+#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-pthread" ]
+#      ; ocamlopt_cppflags = [ "-D_FILE_OFFSET_BITS=64" ]
+#      ; bytecomp_c_compiler =
+#          [ "cc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-pthread"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ]
+#      ; bytecomp_c_libraries = [ "-lm"; "-lpthread" ]
+#      ; native_c_compiler =
+#          [ "cc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-pthread"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ]
+#      ; native_c_libraries = [ "-lm" ]
+#      ; native_pack_linker = [ "ld"; "-r"; "-o" ]
+#      ; cc_profile = []
+#      ; architecture = "amd64"
+#      ; model = "default"
+#      ; int_size = 63
+#      ; word_size = 64
+#      ; system = "macosx"
+#      ; asm = [ "cc"; "-c"; "-Wno-trigraphs" ]
+#      ; asm_cfi_supported = true
+#      ; with_frame_pointers = false
+#      ; ext_exe = ""
+#      ; ext_obj = ".o"
+#      ; ext_asm = ".s"
+#      ; ext_lib = ".a"
+#      ; ext_dll = ".so"
+#      ; os_type = "Unix"
+#      ; default_executable_name = "a.out"
+#      ; systhread_supported = true
+#      ; host = "x86_64-apple-darwin20.6.0"
+#      ; target = "x86_64-apple-darwin20.6.0"
+#      ; profiling = false
+#      ; flambda = false
+#      ; spacetime = false
+#      ; safe_string = true
+#      ; exec_magic_number = "Caml1999X031"
+#      ; cmi_magic_number = "Caml1999I031"
+#      ; cmo_magic_number = "Caml1999O031"
+#      ; cma_magic_number = "Caml1999A031"
+#      ; cmx_magic_number = "Caml1999Y031"
+#      ; cmxa_magic_number = "Caml1999Z031"
+#      ; ast_impl_magic_number = "Caml1999M031"
+#      ; ast_intf_magic_number = "Caml1999N031"
+#      ; cmxs_magic_number = "Caml1999D031"
+#      ; cmt_magic_number = "Caml1999T031"
+#      ; natdynlink_supported = true
+#      ; supports_shared_libraries = true
+#      ; windows_unicode = false
+#      }
+#  }
+$ (cd _build/.sandbox/a6d6c9fbd107f368e4191a69a6a42080/default && .ppx/7e4ffc074ae822c3b4d74302af05ddaa/ppx.exe --auto -o bin/algaroba3.pp.ml --impl bin/algaroba3.ml -corrected-suffix .ppx-corrected -diff-cmd - -dump-ast)
+$ (cd _build/default && /Users/amarshah/.opam/4.14.0/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -I bin/.algaroba3.eobjs/byte -I bin/.algaroba3.eobjs/native -I /Users/amarshah/.opam/4.14.0/lib/base -I /Users/amarshah/.opam/4.14.0/lib/base/base_internalhash_types -I /Users/amarshah/.opam/4.14.0/lib/base/caml -I /Users/amarshah/.opam/4.14.0/lib/base/md5 -I /Users/amarshah/.opam/4.14.0/lib/base/shadow_stdlib -I /Users/amarshah/.opam/4.14.0/lib/base_bigstring -I /Users/amarshah/.opam/4.14.0/lib/base_quickcheck -I /Users/amarshah/.opam/4.14.0/lib/base_quickcheck/ppx_quickcheck/runtime -I /Users/amarshah/.opam/4.14.0/lib/bin_prot -I /Users/amarshah/.opam/4.14.0/lib/bin_prot/shape -I /Users/amarshah/.opam/4.14.0/lib/containers -I /Users/amarshah/.opam/4.14.0/lib/containers/monomorphic -I /Users/amarshah/.opam/4.14.0/lib/core -I /Users/amarshah/.opam/4.14.0/lib/core/base_for_tests -I /Users/amarshah/.opam/4.14.0/lib/core/command -I /Users/amarshah/.opam/4.14.0/lib/core/filename_base -I /Users/amarshah/.opam/4.14.0/lib/core/heap_block -I /Users/amarshah/.opam/4.14.0/lib/core/univ_map -I /Users/amarshah/.opam/4.14.0/lib/core/validate -I /Users/amarshah/.opam/4.14.0/lib/either -I /Users/amarshah/.opam/4.14.0/lib/fieldslib -I /Users/amarshah/.opam/4.14.0/lib/int_repr -I /Users/amarshah/.opam/4.14.0/lib/jane-street-headers -I /Users/amarshah/.opam/4.14.0/lib/landmarks -I /Users/amarshah/.opam/4.14.0/lib/ocaml/threads -I /Users/amarshah/.opam/4.14.0/lib/ocamlgraph -I /Users/amarshah/.opam/4.14.0/lib/parsexp -I /Users/amarshah/.opam/4.14.0/lib/ppx_assert/runtime-lib -I /Users/amarshah/.opam/4.14.0/lib/ppx_bench/runtime-lib -I /Users/amarshah/.opam/4.14.0/lib/ppx_compare/runtime-lib -I /Users/amarshah/.opam/4.14.0/lib/ppx_enumerate/runtime-lib -I /Users/amarshah/.opam/4.14.0/lib/ppx_expect/collector -I /Users/amarshah/.opam/4.14.0/lib/ppx_expect/common -I /Users/amarshah/.opam/4.14.0/lib/ppx_expect/config -I /Users/amarshah/.opam/4.14.0/lib/ppx_expect/config_types -I /Users/amarshah/.opam/4.14.0/lib/ppx_hash/runtime-lib -I /Users/amarshah/.opam/4.14.0/lib/ppx_here/runtime-lib -I /Users/amarshah/.opam/4.14.0/lib/ppx_inline_test/config -I /Users/amarshah/.opam/4.14.0/lib/ppx_inline_test/runtime-lib -I /Users/amarshah/.opam/4.14.0/lib/ppx_log/types -I /Users/amarshah/.opam/4.14.0/lib/ppx_module_timer/runtime -I /Users/amarshah/.opam/4.14.0/lib/ppx_sexp_conv/runtime-lib -I /Users/amarshah/.opam/4.14.0/lib/ppx_stable_witness/runtime -I /Users/amarshah/.opam/4.14.0/lib/ppx_stable_witness/stable_witness -I /Users/amarshah/.opam/4.14.0/lib/seq -I /Users/amarshah/.opam/4.14.0/lib/sexplib -I /Users/amarshah/.opam/4.14.0/lib/sexplib0 -I /Users/amarshah/.opam/4.14.0/lib/smtlib-utils -I /Users/amarshah/.opam/4.14.0/lib/splittable_random -I /Users/amarshah/.opam/4.14.0/lib/stdio -I /Users/amarshah/.opam/4.14.0/lib/stdlib-shims -I /Users/amarshah/.opam/4.14.0/lib/time_now -I /Users/amarshah/.opam/4.14.0/lib/typerep -I /Users/amarshah/.opam/4.14.0/lib/variantslib -I /Users/amarshah/.opam/4.14.0/lib/z3 -I /Users/amarshah/.opam/4.14.0/lib/zarith -I src/.algaroba_lib.objs/byte -I src/.algaroba_lib.objs/native -intf-suffix .ml -no-alias-deps -opaque -o bin/.algaroba3.eobjs/native/dune__exe__Algaroba3.cmx -c -impl bin/algaroba3.pp.ml)
+> File "bin/algaroba3.ml", line 75, characters 9-39:
+> 75 |         (Core.Time.Span.to_short_string
+>               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> Alert deprecated: module Core.Time
+> [since 2021-11] Use [Time_float] or [Time_float_unix] instead
+> File "bin/algaroba3.ml", line 76, characters 13-27:
+> 76 |             (Core.Time.diff (Core.Time.now ()) before) )
+>                   ^^^^^^^^^^^^^^
+> Alert deprecated: module Core.Time
+> [since 2021-11] Use [Time_float] or [Time_float_unix] instead
+> File "bin/algaroba3.ml", line 76, characters 29-42:
+> 76 |             (Core.Time.diff (Core.Time.now ()) before) )
+>                                   ^^^^^^^^^^^^^
+> Alert deprecated: module Core.Time
+> [since 2021-11] Use [Time_float] or [Time_float_unix] instead
+> File "bin/algaroba3.ml", line 86, characters 23-36:
+> 86 |           let before = Core.Time.now () in
+>                             ^^^^^^^^^^^^^
+> Alert deprecated: module Core.Time
+> [since 2021-11] Use [Time_float] or [Time_float_unix] instead
+> File "bin/algaroba3.ml", line 93, characters 23-36:
+> 93 |           let before = Core.Time.now () in
+>                             ^^^^^^^^^^^^^
+> Alert deprecated: module Core.Time
+> [since 2021-11] Use [Time_float] or [Time_float_unix] instead
+> File "bin/algaroba3.ml", line 96, characters 23-36:
+> 96 |           let before = Core.Time.now () in
+>                             ^^^^^^^^^^^^^
+> Alert deprecated: module Core.Time
+> [since 2021-11] Use [Time_float] or [Time_float_unix] instead
+> File "bin/algaroba3.ml", line 99, characters 23-36:
+> 99 |           let before = Core.Time.now () in
+>                             ^^^^^^^^^^^^^
+> Alert deprecated: module Core.Time
+> [since 2021-11] Use [Time_float] or [Time_float_unix] instead
+> File "bin/algaroba3.ml", line 102, characters 23-36:
+> 102 |           let before = Core.Time.now () in
+>                              ^^^^^^^^^^^^^
+> Alert deprecated: module Core.Time
+> [since 2021-11] Use [Time_float] or [Time_float_unix] instead
+> File "bin/algaroba3.ml", line 105, characters 23-36:
+> 105 |           let before = Core.Time.now () in
+>                              ^^^^^^^^^^^^^
+> Alert deprecated: module Core.Time
+> [since 2021-11] Use [Time_float] or [Time_float_unix] instead
+> File "bin/algaroba3.ml", line 110, characters 28-41:
+> 110 |               (let before = Core.Time.now () in
+>                                   ^^^^^^^^^^^^^
+> Alert deprecated: module Core.Time
+> [since 2021-11] Use [Time_float] or [Time_float_unix] instead
+> File "bin/algaroba3.ml", line 113, characters 27-40:
+> 113 |               let before = Core.Time.now () in
+>                                  ^^^^^^^^^^^^^
+> Alert deprecated: module Core.Time
+> [since 2021-11] Use [Time_float] or [Time_float_unix] instead
+> File "bin/algaroba3.ml", line 120, characters 27-40:
+> 120 |               let before = Core.Time.now () in
+>                                  ^^^^^^^^^^^^^
+> Alert deprecated: module Core.Time
+> [since 2021-11] Use [Time_float] or [Time_float_unix] instead
+> File "bin/algaroba3.ml", line 160, characters 90-98:
+> 160 |                             print_string "these are our statements in solver: "; let _  = List.map (Z3.Solver.get_assertions solver) (fun e -> print_endline ("(assert " ^ (Z3.Expr.to_string e) ^ ")")) in
+>                                                                                                 ^^^^^^^^
+> Warning 6 [labels-omitted]: label f was omitted in the application of this function.
+> File "bin/algaroba3.ml", line 161, characters 41-54:
+> 161 |                             let before = Core.Time.now () in
+>                                                ^^^^^^^^^^^^^
+> Alert deprecated: module Core.Time
+> [since 2021-11] Use [Time_float] or [Time_float_unix] instead
+> File "bin/algaroba3.ml", line 169, characters 28-29:
+> 169 |                           | _ -> raise (UnsupportedQuery "Neither sat nor unsat")
+>                                   ^
+> Warning 11 [redundant-case]: this match case is unused.
+> File "bin/algaroba3.ml", line 179, characters 29-42:
+> 179 |                 let before = Core.Time.now () in
+>                                    ^^^^^^^^^^^^^
+> Alert deprecated: module Core.Time
+> [since 2021-11] Use [Time_float] or [Time_float_unix] instead
+> File "bin/algaroba3.ml", line 13, characters 0-23:
+> 13 | open Algaroba_lib.Bound
+>      ^^^^^^^^^^^^^^^^^^^^^^^
+> Warning 33 [unused-open]: unused open Algaroba_lib.Bound.
+> File "bin/algaroba3.ml", line 111, characters 21-32:
+> 111 |               let _, depths_list = generate_depths () in
+>                            ^^^^^^^^^^^
+> Warning 26 [unused-var]: unused variable depths_list.
+$ (cd _build/default && /Users/amarshah/.opam/4.14.0/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -o bin/algaroba3.exe /Users/amarshah/.opam/4.14.0/lib/smtlib-utils/smtlib_utils.cmxa /Users/amarshah/.opam/4.14.0/lib/base/base_internalhash_types/base_internalhash_types.cmxa -I /Users/amarshah/.opam/4.14.0/lib/base/base_internalhash_types /Users/amarshah/.opam/4.14.0/lib/base/caml/caml.cmxa /Users/amarshah/.opam/4.14.0/lib/sexplib0/sexplib0.cmxa /Users/amarshah/.opam/4.14.0/lib/base/shadow_stdlib/shadow_stdlib.cmxa /Users/amarshah/.opam/4.14.0/lib/base/base.cmxa -I /Users/amarshah/.opam/4.14.0/lib/base /Users/amarshah/.opam/4.14.0/lib/ppx_sexp_conv/runtime-lib/ppx_sexp_conv_lib.cmxa /Users/amarshah/.opam/4.14.0/lib/ppx_compare/runtime-lib/ppx_compare_lib.cmxa /Users/amarshah/.opam/4.14.0/lib/ppx_enumerate/runtime-lib/ppx_enumerate_lib.cmxa /Users/amarshah/.opam/4.14.0/lib/ppx_hash/runtime-lib/ppx_hash_lib.cmxa /Users/amarshah/.opam/4.14.0/lib/ppx_here/runtime-lib/ppx_here_lib.cmxa /Users/amarshah/.opam/4.14.0/lib/ppx_assert/runtime-lib/ppx_assert_lib.cmxa /Users/amarshah/.opam/4.14.0/lib/ppx_bench/runtime-lib/ppx_bench_lib.cmxa /Users/amarshah/.opam/4.14.0/lib/base/md5/md5_lib.cmxa /Users/amarshah/.opam/4.14.0/lib/fieldslib/fieldslib.cmxa /Users/amarshah/.opam/4.14.0/lib/variantslib/variantslib.cmxa /Users/amarshah/.opam/4.14.0/lib/bin_prot/shape/bin_shape.cmxa /Users/amarshah/.opam/4.14.0/lib/ppx_stable_witness/stable_witness/stable_witness.cmxa /Users/amarshah/.opam/4.14.0/lib/bin_prot/bin_prot.cmxa -I /Users/amarshah/.opam/4.14.0/lib/bin_prot /Users/amarshah/.opam/4.14.0/lib/ppx_inline_test/config/inline_test_config.cmxa /Users/amarshah/.opam/4.14.0/lib/jane-street-headers/jane_street_headers.cmxa /Users/amarshah/.opam/4.14.0/lib/time_now/time_now.cmxa -I /Users/amarshah/.opam/4.14.0/lib/time_now /Users/amarshah/.opam/4.14.0/lib/ppx_inline_test/runtime-lib/ppx_inline_test_lib.cmxa /Users/amarshah/.opam/4.14.0/lib/stdio/stdio.cmxa /Users/amarshah/.opam/4.14.0/lib/ppx_module_timer/runtime/ppx_module_timer_runtime.cmxa /Users/amarshah/.opam/4.14.0/lib/ppx_stable_witness/runtime/ppx_stable_witness_runtime.cmxa /Users/amarshah/.opam/4.14.0/lib/typerep/typerep_lib.cmxa /Users/amarshah/.opam/4.14.0/lib/ppx_expect/common/expect_test_common.cmxa /Users/amarshah/.opam/4.14.0/lib/ppx_expect/config_types/expect_test_config_types.cmxa /Users/amarshah/.opam/4.14.0/lib/ppx_expect/collector/expect_test_collector.cmxa -I /Users/amarshah/.opam/4.14.0/lib/ppx_expect/collector /Users/amarshah/.opam/4.14.0/lib/ppx_expect/config/expect_test_config.cmxa /Users/amarshah/.opam/4.14.0/lib/ocaml/unix.cmxa -I /Users/amarshah/.opam/4.14.0/lib/ocaml /Users/amarshah/.opam/4.14.0/lib/ocaml/bigarray.cmxa -I /Users/amarshah/.opam/4.14.0/lib/ocaml /Users/amarshah/.opam/4.14.0/lib/parsexp/parsexp.cmxa /Users/amarshah/.opam/4.14.0/lib/sexplib/sexplib.cmxa /Users/amarshah/.opam/4.14.0/lib/ppx_log/types/ppx_log_types.cmxa /Users/amarshah/.opam/4.14.0/lib/splittable_random/splittable_random.cmxa /Users/amarshah/.opam/4.14.0/lib/base_quickcheck/base_quickcheck.cmxa /Users/amarshah/.opam/4.14.0/lib/base_quickcheck/ppx_quickcheck/runtime/ppx_quickcheck_runtime.cmxa /Users/amarshah/.opam/4.14.0/lib/int_repr/int_repr.cmxa /Users/amarshah/.opam/4.14.0/lib/base_bigstring/base_bigstring.cmxa -I /Users/amarshah/.opam/4.14.0/lib/base_bigstring /Users/amarshah/.opam/4.14.0/lib/core/base_for_tests/base_for_tests.cmxa /Users/amarshah/.opam/4.14.0/lib/core/filename_base/filename_base.cmxa /Users/amarshah/.opam/4.14.0/lib/core/univ_map/univ_map.cmxa /Users/amarshah/.opam/4.14.0/lib/core/command/command.cmxa /Users/amarshah/.opam/4.14.0/lib/core/heap_block/heap_block.cmxa -I /Users/amarshah/.opam/4.14.0/lib/core/heap_block /Users/amarshah/.opam/4.14.0/lib/core/validate/validate.cmxa /Users/amarshah/.opam/4.14.0/lib/core/core.cmxa -I /Users/amarshah/.opam/4.14.0/lib/core /Users/amarshah/.opam/4.14.0/lib/either/either.cmxa /Users/amarshah/.opam/4.14.0/lib/containers/monomorphic/containers_monomorphic.cmxa /Users/amarshah/.opam/4.14.0/lib/containers/containers.cmxa /Users/amarshah/.opam/4.14.0/lib/stdlib-shims/stdlib_shims.cmxa /Users/amarshah/.opam/4.14.0/lib/ocamlgraph/graph.cmxa /Users/amarshah/.opam/4.14.0/lib/zarith/zarith.cmxa -I /Users/amarshah/.opam/4.14.0/lib/zarith /Users/amarshah/.opam/4.14.0/lib/ocaml/threads/threads.cmxa -I /Users/amarshah/.opam/4.14.0/lib/ocaml /Users/amarshah/.opam/4.14.0/lib/z3/z3ml.cmxa -I /Users/amarshah/.opam/4.14.0/lib/z3 /Users/amarshah/.opam/4.14.0/lib/landmarks/landmark.cmxa -I /Users/amarshah/.opam/4.14.0/lib/landmarks src/algaroba_lib.cmxa bin/.algaroba3.eobjs/native/dune__exe__Algaroba3.cmx)
+> ld: warning: search path '/opt/local/lib' not found
