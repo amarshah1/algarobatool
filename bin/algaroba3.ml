@@ -118,7 +118,20 @@ let speclist =
               let finite_adt_axioms = generate_finite_adt_axioms () in
               print_time before "Generate tester axioms time" ;
               let before = Core.Time.now () in
-              let first_result, context, solver, sorts, func_decls = evaluate_stmts_from_scratch (rrs @ tester_axioms @ finite_adt_axioms) in
+              (* let rec find_func_decls stmts = 
+                begin match stmts with 
+                  | PA.Stmt_decl fun_decl :: rest -> 
+                      print_endline ("we have the fun_decl: " ^ fun_decl.fun_name);
+                      find_func_decls rest
+                  | _ :: rest -> find_func_decls rest 
+                  | [] -> ()
+                end in
+              find_func_decls (rrs @ tester_axioms @ finite_adt_axioms); *)
+              let first_result, context, solver, sorts, func_decls = evaluate_stmts_from_scratch (rrs @ tester_axioms @ finite_adt_axioms) in 
+              (* begin match Z3.Solver.get_model solver with 
+                | Some model -> print_string "early model is: "; print_endline ("\n _______________________________________  \n Model: \n" ^ Z3.Model.to_string model)
+                | None -> print_string "Could not find an early model"
+              end; *)
               print_time before "First solve time (no acyclicality)" ;
               begin match first_result with
               | "unsat" -> print_string first_result
@@ -138,7 +151,6 @@ let speclist =
                           | _ -> "sat"
                         end
                       in *)
-                      (*TODO trying tor right code to validate a model*)
                       let validate_model keys ctx solver sorts func_decls = 
                         begin match Z3.Solver.get_model solver with 
                           | Some model -> 
@@ -148,16 +160,16 @@ let speclist =
                         end
                       in
                       let rec evaluate_result keys (ctx : Z3.context) solver sorts func_decls iteration_num = 
-                        print_endline "iteration";
+                        (* print_endline "iteration"; *)
                         begin match (validate_model keys ctx solver sorts func_decls) with 
                           | _, false -> (*print_string "sat"; ()*)
                               begin match Z3.Solver.get_model solver with 
-                                | Some model ->print_endline ("\n _______________________________________  \n Model: \n" ^ Z3.Model.to_string model); print_string "sat"; ()
+                                | Some model -> (*print_endline ("\n _______________________________________  \n Model: \n" ^ Z3.Model.to_string model);*) print_string "sat"; ()
                                 | None -> print_string "no model found"; ()
                               end
                           | new_axioms, true ->
-                            print_endline "unsat case";
-                            print_string "these are our statements in solver: "; let _  = List.map (Z3.Solver.get_assertions solver) (fun e -> print_endline ("(assert " ^ (Z3.Expr.to_string e) ^ ")")) in
+                            (* print_endline "unsat case"; *)
+                            (* print_string "these are our statements in solver: "; let _  = List.map (Z3.Solver.get_assertions solver) (fun e -> print_endline ("(assert " ^ (Z3.Expr.to_string e) ^ ")")) in *)
                             let before = Core.Time.now () in
                             let result,ctx, solver, sorts, func_decls = evaluate_stmts new_axioms context solver sorts func_decls in
                             print_time before ("UNSAT solve iteration " ^ (string_of_int iteration_num)) ;

@@ -157,6 +157,7 @@ let rec convert_smt_to_z3 context solver (stmts : PA.stmt list)
         in
         (*not sure if i need to do anything to this*)
         Hashtbl.add func_decls fun_decl.fun_name z3_func_decl ;
+        (* print_endline ("Added in the fun_decl: " ^ fun_decl.fun_name);  *)
         convert_smt_to_z3 context solver rest sorts func_decls
     (* | Stmt_fun_def of fun_def | Stmt_fun_rec of fun_def | Stmt_funs_rec of
        funs_rec_def | Stmt_data of ((string * int) * cstor list) list *)

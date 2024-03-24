@@ -53,17 +53,17 @@ if test_case == "Barrett":
     typedfolder5 = "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v5/"
     typedfolder10 = "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v10/"
 
-    folders = {"test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v1/": glob.glob(folder1 + "*.smt2")[:50]}#,
-            # "test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v2/": glob.glob(folder2 + "*.smt2"),
-            # "test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v3/": glob.glob(folder3 + "*.smt2"),
-            # "test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v5/": glob.glob(folder5 + "*.smt2"),
-            # "test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v10/": glob.glob(folder10 + "*.smt2"),
-            # "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v1/": glob.glob(typedfolder1 + "*.smt2"),
-            # "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v2/": glob.glob(typedfolder2 + "*.smt2"),
-            # "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v3/": glob.glob(typedfolder3 + "*.smt2"),
-            # "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v5/": glob.glob(typedfolder5 + "*.smt2"),
-            # "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v10/": glob.glob(typedfolder10 + "*.smt2")
-            # }        
+    folders = {"test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v1/": glob.glob(folder1 + "*.smt2"),
+            "test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v2/": glob.glob(folder2 + "*.smt2"),
+            "test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v3/": glob.glob(folder3 + "*.smt2"),
+            "test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v5/": glob.glob(folder5 + "*.smt2"),
+            "test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v10/": glob.glob(folder10 + "*.smt2"),
+            "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v1/": glob.glob(typedfolder1 + "*.smt2"),
+            "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v2/": glob.glob(typedfolder2 + "*.smt2"),
+            "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v3/": glob.glob(typedfolder3 + "*.smt2"),
+            "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v5/": glob.glob(typedfolder5 + "*.smt2"),
+            "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v10/": glob.glob(typedfolder10 + "*.smt2")
+            }        
 elif test_case == "Bouvier":
     folders = {"test/QF_DT2/20210312-Bouvier/": glob.glob("test/QF_DT2/20210312-Bouvier/*smt2")}
 elif test_case == "BouvierUF":
