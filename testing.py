@@ -10,15 +10,15 @@ import numpy as np
 from datetime import datetime
 import pandas as pd
 
-timeout = 1200
+timeout = 1201
 reduction_timeout = timeout
-test_case = "Barrett"
+test_case = "blocksworld"
 output_name = ""
 run_pre_solvers= True
 princess_path = "princess"
 cvc5_path = "cvc5"
 z3_path = "z3"
-algaroba_flags = {"algaroba3": []}
+algaroba_flags = {"algaroba": [], "algaroba2":[], "algaroba3": []}
 
 
 # A function that runs the Ocaml that does the reductions for us
@@ -53,17 +53,17 @@ if test_case == "Barrett":
     typedfolder5 = "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v5/"
     typedfolder10 = "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v10/"
 
-    folders = {"test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v1/": glob.glob(folder1 + "*.smt2"),
-            "test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v2/": glob.glob(folder2 + "*.smt2"),
-            "test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v3/": glob.glob(folder3 + "*.smt2"),
-            "test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v5/": glob.glob(folder5 + "*.smt2"),
-            "test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v10/": glob.glob(folder10 + "*.smt2"),
-            "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v1/": glob.glob(typedfolder1 + "*.smt2"),
-            "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v2/": glob.glob(typedfolder2 + "*.smt2"),
-            "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v3/": glob.glob(typedfolder3 + "*.smt2"),
-            "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v5/": glob.glob(typedfolder5 + "*.smt2"),
-            "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v10/": glob.glob(typedfolder10 + "*.smt2")
-            }        
+    folders = {"test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v1/": glob.glob(folder1 + "*.smt2")[:100]}#,
+            # "test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v2/": glob.glob(folder2 + "*.smt2"),
+            # "test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v3/": glob.glob(folder3 + "*.smt2"),
+            # "test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v5/": glob.glob(folder5 + "*.smt2"),
+            # "test/QF_DT2/20172804-Barrett/barrett-jsat/tests/v10/": glob.glob(folder10 + "*.smt2"),
+            # "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v1/": glob.glob(typedfolder1 + "*.smt2"),
+            # "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v2/": glob.glob(typedfolder2 + "*.smt2"),
+            # "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v3/": glob.glob(typedfolder3 + "*.smt2"),
+            # "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v5/": glob.glob(typedfolder5 + "*.smt2"),
+            # "test/QF_DT2/20172804-Barrett/barrett-jsat/typed/v10/": glob.glob(typedfolder10 + "*.smt2")
+            # }        
 elif test_case == "Bouvier":
     folders = {"test/QF_DT2/20210312-Bouvier/": glob.glob("test/QF_DT2/20210312-Bouvier/*smt2")}
 elif test_case == "BouvierUF":
@@ -73,7 +73,7 @@ elif test_case == "BouvierUF":
         folders[folder] = glob.glob(folder + "*.smt2")
 elif test_case == "blocksworld":
     folders = {"test/blocksworld/": glob.glob("test/blocksworld/*.smt2")}
-    folders = folders = {"test/blocksworld/": ["test/blocksworld/blocksworld_from_18_0_3_to_4_13_4_negated_goal_bmc_3.smt2"]}
+    # folders = folders = {"test/blocksworld/": ["test/blocksworld/blocksworld_from_18_0_3_to_4_13_4_negated_goal_bmc_3.smt2"]}
 else:
     folders = {}
     print("ERROR: Not given a valid test case")
@@ -200,6 +200,7 @@ def make_graph(algaroba,z3, cvc5, princess):
         percentage = cumulative_counts / len(data) * 100
         percentages.append(percentage)
 
+
     # Create x-values from 0 to max_value
     x = np.arange(max_value + 1)
 
@@ -207,7 +208,7 @@ def make_graph(algaroba,z3, cvc5, princess):
     x = x[:len(percentages[0])]
 
     # Plot each line
-    colors = ['g', 'r', 'b', 'c', 'm']
+    colors = ['g', 'r', 'b', 'c', 'm', 'y']
     labels = list(algaroba.keys()) + ["Z3", "CVC5", "Princess"]
     if not run_pre_solvers:
         percentages, colors, labels = percentages, colors[:len(algaroba.keys())], labels[:len(algaroba.keys())]
@@ -223,7 +224,7 @@ def make_graph(algaroba,z3, cvc5, princess):
     # Add legend
     plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 
-    # plt.savefig("test/graphs/" + output_name + datetime.now().strftime("%Y-%m-%d%H:%M:%S") + '.png', dpi=300, bbox_inches = "tight")
+    plt.savefig("test/graphs/" + output_name + datetime.now().strftime("%Y-%m-%d%H:%M:%S") + '.png', dpi=300, bbox_inches = "tight")
 
 
     # Show the plot
@@ -322,7 +323,7 @@ if __name__ == '__main__':
     
     print("DOESNT MATCH: ", incorrects)
 
-    # make_graph(algaroba_times, z3 ,cvc5, princess)
+    make_graph(algaroba_times, z3 ,cvc5, princess)
 
     if run_pre_solvers: 
         new_dict = {"Query Path": filenames,  "SAT/UNSAT": sat_unsat, "Depths": depths}
